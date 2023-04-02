@@ -1,0 +1,25 @@
+
+```python
+import sys
+import math
+
+# Function to factorize a number
+def factorize(n):
+    # Iterate from 2 to the square root of n
+    for i in range(2, int(math.sqrt(n))+1):
+        # If i is a factor of n
+        if n % i == 0:
+            # Return the factorization
+            return "{}={}*{}".format(n, i, n//i)
+    
+    # If no factorization is found, return an error message
+    return "{} couldn't be factored".format(n)
+
+# Check if a file was provided as input
+if len(sys.argv) < 2:
+    print("Usage: factors <file>")
+    sys.exit()
+
+# Open the file and read its contents
+with open(sys.argv[1], 'r') as f:
+    lines =
